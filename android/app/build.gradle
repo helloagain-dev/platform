@@ -2,12 +2,6 @@ apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
 import com.android.build.OutputFile
-import org.apache.tools.ant.taskdefs.condition.Os
-
-/**
- * This is the configuration block to customize your React Native Android app.
- * By default you don't need to apply any configuration, just uncomment the lines you need.
- */
 
 react {
     /* Folders */
@@ -51,8 +45,10 @@ react {
     // hermesFlags = ["-O", "-output-source-map"]
 }
 
-apply from: "../../node_modules/react-native/react.gradle"
-//NativeModuleInjectionMark-app-gradle-reactGradle
+
+
+
+
 
 /**
  * Set this to true to create four separate APKs instead of one,
@@ -63,7 +59,7 @@ apply from: "../../node_modules/react-native/react.gradle"
 def enableSeparateBuildPerCPUArchitecture = false
 
 /**
- * Run Proguard to shrink the Java bytecode in release builds.
+ * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */
 def enableProguardInReleaseBuilds = false
 
@@ -184,7 +180,7 @@ dependencies {
     // commented implementation project lines are here to signal react-native link
     // that this dependency has already been linked
 
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    // implementation fileTree(dir: "libs", include: ["*.jar"])
 
     implementation "androidx.appcompat:appcompat:1.1.0"
     implementation "androidx.multidex:multidex:2.0.1"
@@ -195,7 +191,6 @@ dependencies {
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 
-    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}")
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {

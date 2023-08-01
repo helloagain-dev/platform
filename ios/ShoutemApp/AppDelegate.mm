@@ -15,9 +15,10 @@
 
   //NativeModuleInjectionMark-appDelegate-applicationDidFinishLaunchingWithOptions
 
+  bool didFinish = [super application:application didFinishLaunchingWithOptions:launchOptions];
   //NativeModuleInjectionMark-appDelegate-applicationDidFinishLaunchingWithOptions-end
 
-  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+  return didFinish;
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge

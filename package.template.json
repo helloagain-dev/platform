@@ -2,6 +2,8 @@
   "name": "@shoutem/platform",
   "version": "12.3.0",
   "scripts": {
+    "test": "jest --config ./extensions/tests/jest.config.js",
+    "clear-test-cache": "jest --clearCache",
     "android": "react-native run-android",
     "build": "node scripts/build",
     "bundle": "node scripts/bundle",
@@ -12,7 +14,8 @@
     "list-dependencies": "node scripts/platform-dependencies",
     "postinstall": "node scripts/postinstall",
     "setup": "cd scripts && yarn install",
-    "start": "react-native start"
+    "start": "react-native start",
+    "link-fonts": "react-native-asset -a extensions/shoutem.fonts/app/fonts/"
   },
   "dependencies": {
     "auto-bind": "4.0.0",
@@ -29,9 +32,13 @@
     "redux-logger": "2.6.1",
     "redux-persist": "4.10.2",
     "redux-thunk": "2.0.1",
-    "whatwg-fetch": "1.0.0"
+    "whatwg-fetch": "1.0.0",
+    "colors": "1.4.0"
   },
   "devDependencies": {
+    "jest-junit": "13.2.0",
+    "@testing-library/jest-native": "^4.0.4",
+    "@testing-library/react-native": "^8.0.0",
     "@babel/core": "7.16.7",
     "@babel/plugin-proposal-decorators": "7.16.7",
     "@babel/preset-env": "7.16.8",
@@ -55,7 +62,10 @@
     "metro-react-native-babel-preset": "0.71.3",
     "patch-package": "6.4.7",
     "prettier": "1.19.1",
-    "react-test-renderer": "17.0.2"
+    "react-test-renderer": "17.0.2",
+    "plist": "3.0.5",
+    "xcode": "3.0.1",
+    "react-native-asset": "2.1.1"
   },
   "resolutions": {
     "metro": "0.71.3",
@@ -73,7 +83,14 @@
     "metro-source-map": "0.71.3",
     "metro-symbolicate": "0.71.3",
     "metro-transform-plugins": "0.71.3",
-    "metro-transform-worker": "0.71.3"
+    "metro-transform-worker": "0.71.3",
+    "react-native-render-html": "helloagain-dev/react-native-render-html.git#ed24f3585ea414268db2e548ec020a74e705be7e",
+    "tinycolor2": "1.4.2",
+    "prop-types": "15.8.1",
+    "hoist-non-react-statics": "3.3.2",
+    "**/react-native-device-info": "10.3.0",
+    "**/react-native-webview": "12.1.0",
+    "react-native-safe-area-context": "4.7.1"
   },
   "eslintConfig": {
     "extends": "@shoutem/react-native",
